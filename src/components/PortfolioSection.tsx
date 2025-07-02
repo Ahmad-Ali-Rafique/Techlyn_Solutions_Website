@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
@@ -22,7 +21,7 @@ const projects = [
 
 export const PortfolioSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-dark-gray mb-6">
