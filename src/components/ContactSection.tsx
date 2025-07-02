@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const socialLinks = [
   { 
@@ -50,15 +51,45 @@ const socialLinks = [
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init('ECgMhI0iyqhGT3lbJ');
+
+      // Send email using your service ID and template ID
+      await emailjs.send(
+        'service_3e7exh5',
+        'template_l5ka3j3',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Techlyn Solutions Team',
+        }
+      );
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      });
+      
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      toast({
+        title: "Failed to Send Message",
+        description: "There was an error sending your message. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -66,7 +97,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section className="py-20 bg-navy">
+    <section id="contact" className="py-20 bg-navy">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -158,6 +189,7 @@ export const ContactSection = () => {
                       className="bg-white/10 border-white/20 text-white placeholder:text-blue-200 focus:border-red focus:ring-red"
                       placeholder="Your full name"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div>
@@ -173,6 +205,7 @@ export const ContactSection = () => {
                       className="bg-white/10 border-white/20 text-white placeholder:text-blue-200 focus:border-red focus:ring-red"
                       placeholder="your.email@example.com"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div>
@@ -188,14 +221,16 @@ export const ContactSection = () => {
                       className="bg-white/10 border-white/20 text-white placeholder:text-blue-200 focus:border-red focus:ring-red resize-none"
                       placeholder="Tell us about your project and how we can help..."
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   <Button 
                     type="submit"
                     size="lg"
-                    className="w-full bg-red hover:bg-red/90 text-white font-semibold py-3 transition-all duration-300 hover:shadow-lg hover:shadow-red/25"
+                    disabled={isSubmitting}
+                    className="w-full bg-red hover:bg-red/90 text-white font-semibold py-3 transition-all duration-300 hover:shadow-lg hover:shadow-red/25 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
