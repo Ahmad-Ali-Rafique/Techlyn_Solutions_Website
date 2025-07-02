@@ -1,22 +1,27 @@
 
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+
 const teamMembers = [
   {
     name: 'Ahmad Ali',
     role: 'Artificial Intelligence & Machine Learning Engineer',
     description: 'Leading AI innovation with cutting-edge machine learning solutions and intelligent system architecture.',
-    avatar: 'AA'
+    avatar: 'AA',
+    image: '/lovable-uploads/8b02f472-7cd4-4a0d-8873-5b62a048fc19.png'
   },
   {
     name: 'Mujtabah',
     role: 'AI Powered Sales Automations Executive',
     description: 'Specializing in automated sales processes and AI-driven customer engagement strategies.',
-    avatar: 'MJ'
+    avatar: 'MJ',
+    image: '/lovable-uploads/6cc31695-0e53-4c8a-b407-9a2135f10d41.png'
   },
   {
     name: 'Talha Shabbir',
     role: 'Chief Business Automation and AI Solutions Specialist',
     description: 'Transforming businesses through comprehensive automation solutions and strategic AI implementation.',
-    avatar: 'TS'
+    avatar: 'TS',
+    image: '/lovable-uploads/2b16a4cd-3a4b-4187-96ea-12970dce7f15.png'
   }
 ];
 
@@ -40,11 +45,18 @@ export const TeamSection = () => {
               className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 animate-scale-in"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Avatar */}
+              {/* Professional Photo */}
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-navy rounded-full flex items-center justify-center text-white text-2xl font-bold group-hover:bg-red transition-colors duration-300">
-                  {member.avatar}
-                </div>
+                <Avatar className="w-32 h-32 group-hover:scale-105 transition-transform duration-300">
+                  <AvatarImage 
+                    src={member.image} 
+                    alt={member.name}
+                    className="object-cover"
+                  />
+                  <AvatarFallback className="w-32 h-32 bg-navy text-white text-3xl font-bold group-hover:bg-red transition-colors duration-300">
+                    {member.avatar}
+                  </AvatarFallback>
+                </Avatar>
               </div>
 
               {/* Content */}
