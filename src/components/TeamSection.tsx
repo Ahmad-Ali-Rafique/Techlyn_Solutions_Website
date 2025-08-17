@@ -103,35 +103,6 @@ export const TeamSection = () => {
     </section>
   );
 };
-
-<div className="team-card">
-  <img src={member.image} alt={member.name} className="rounded-full w-24 h-24 mx-auto" />
-  <h3 className="text-lg font-semibold mt-3">{member.name}</h3>
-  <p className="text-red-600 font-medium">{member.role}</p>
-  <p className="text-gray-600 text-sm mt-2">{member.description}</p>
-  
-  {/* LinkedIn Button */}
-  <a 
-    href={member.linkedin} 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 mt-3 px-3 py-1 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" className="w-4 h-4">
-      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 
-        0 16 .513 16 1.146v13.708c0 .633-.526 
-        1.146-1.175 1.146H1.175C.526 16 0 
-        15.487 0 14.854V1.146zm4.943 
-        12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 
-        0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 
-        0-1.358.54-1.358 1.248 0 .694.52 1.248 
-        1.327 1.248h.015zM13.458 
-        13.394v-4.065c0-2.176-1.158-3.186-2.701-3.186-1.243 
-        0-1.8.682-2.116 1.16V6.169H6.24c.03.682 
-        0 7.225 0 7.225h2.401v-4.036c0-.216.015-.432.08-.586.175-.431.573-.878 
-        1.243-.878.878 0 1.23.662 1.23 
-        1.634v3.866h2.264z"/>
-    </svg>
     LinkedIn
   </a>
 </div>
