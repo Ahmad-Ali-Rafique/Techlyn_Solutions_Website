@@ -198,10 +198,10 @@ export const ContactSection = () => {
       <div>
         <span className="block text-blue-200 text-sm">Ahmad Ali</span>
         <a 
-          href="tel:03289460713" 
+          href="tel:+92 328 9460713" 
           className="text-blue-100 hover:text-white transition-colors duration-300 text-lg"
         >
-          0328 9460713
+          +92 328 9460713
         </a>
       </div>
       <a
