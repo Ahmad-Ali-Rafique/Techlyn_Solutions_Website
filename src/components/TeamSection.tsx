@@ -104,4 +104,4 @@ export const TeamSection = () => {
     LinkedIn
   </a>
 </div>
-
+</section>
