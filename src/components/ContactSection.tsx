@@ -16,6 +16,16 @@ const socialLinks = [
     color: 'hover:text-blue-600' 
   },
   { 
+    name: 'YouTube', 
+    url: 'https://www.youtube.com/@techlynsolutions', 
+    icon: () => (
+      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a2.97 2.97 0 00-2.09-2.103C19.658 3.5 12 3.5 12 3.5s-7.658 0-9.408.583a2.97 2.97 0 00-2.09 2.103A31.16 31.16 0 000 12a31.16 31.16 0 00.502 5.814 2.97 2.97 0 002.09 2.103C4.342 20.5 12 20.5 12 20.5s7.658 0 9.408-.583a2.97 2.97 0 002.09-2.103A31.16 31.16 0 0024 12a31.16 31.16 0 00-.502-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+      </svg>
+    ),
+    color: 'hover:text-red-600' 
+  },
+  { 
     name: 'Facebook', 
     url: 'https://facebook.com/profile.php?id=61577036004854', 
     icon: Facebook,
@@ -46,16 +56,6 @@ const socialLinks = [
       </svg>
     ),
     color: 'hover:text-black' 
-  },
-  { 
-    name: 'YouTube', 
-    url: 'https://www.youtube.com/@techlynsolutions', 
-    icon: () => (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M23.498 6.186a2.97 2.97 0 00-2.09-2.103C19.658 3.5 12 3.5 12 3.5s-7.658 0-9.408.583a2.97 2.97 0 00-2.09 2.103A31.16 31.16 0 000 12a31.16 31.16 0 00.502 5.814 2.97 2.97 0 002.09 2.103C4.342 20.5 12 20.5 12 20.5s7.658 0 9.408-.583a2.97 2.97 0 002.09-2.103A31.16 31.16 0 0024 12a31.16 31.16 0 00-.502-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
-      </svg>
-    ),
-    color: 'hover:text-red-600' 
   },
   { 
     name: 'WhatsApp Channel', 
