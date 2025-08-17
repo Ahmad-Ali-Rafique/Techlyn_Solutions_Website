@@ -14,7 +14,9 @@ const teamMembers = [
     role: 'Artificial Intelligence & Machine Learning Engineer',
     description: 'Leading AI innovation with cutting-edge machine learning solutions and intelligent system architecture.',
     avatar: 'AA',
-    image: '/lovable-uploads/6cc31695-0e53-4c8a-b407-9a2135f10d41.png'
+    image: '/lovable-uploads/6cc31695-0e53-4c8a-b407-9a2135f10d41.png',
+    linkedin: 'linkedin.com/in/ahmad-ali-rafique/' // 🔗 Add LinkedIn URL
+
   },
   {
     name: 'Talha Shabbir',
