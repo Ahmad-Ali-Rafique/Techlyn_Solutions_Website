@@ -277,10 +277,10 @@ export const ContactSection = () => {
               </CardHeader>
               <CardContent>
                 <a 
-                  href="mailto:team.techlynsolutions@gmail.com" 
+                  href="mailto:contact@techlynsolutions.com" 
                   className="text-blue-100 hover:text-white transition-colors duration-300 text-lg"
                 >
-                  team.techlynsolutions@gmail.com
+                  contact@techlynsolutions.com
                 </a>
               </CardContent>
             </Card>
