@@ -2,19 +2,19 @@
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const teamMembers = [
+    {
+    name: 'Mujtabah',
+    role: 'AI Powered Sales Automations Executive',
+    description: 'Specializing in automated sales processes and AI-driven customer engagement strategies.',
+    avatar: 'MJ',
+    image: '/lovable-uploads/6cc31695-0e53-4c8a-b407-9a2135f10d41.png'
+  },
   {
     name: 'Ahmad Ali',
     role: 'Artificial Intelligence & Machine Learning Engineer',
     description: 'Leading AI innovation with cutting-edge machine learning solutions and intelligent system architecture.',
     avatar: 'AA',
     image: '/lovable-uploads/8b02f472-7cd4-4a0d-8873-5b62a048fc19.png'
-  },
-  {
-    name: 'Mujtabah',
-    role: 'AI Powered Sales Automations Executive',
-    description: 'Specializing in automated sales processes and AI-driven customer engagement strategies.',
-    avatar: 'MJ',
-    image: '/lovable-uploads/6cc31695-0e53-4c8a-b407-9a2135f10d41.png'
   },
   {
     name: 'Talha Shabbir',
