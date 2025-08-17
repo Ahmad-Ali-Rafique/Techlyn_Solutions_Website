@@ -101,7 +101,3 @@ export const TeamSection = () => {
     </section>
   );
 };
-    LinkedIn
-  </a>
-</div>
-</section>
