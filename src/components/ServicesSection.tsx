@@ -42,12 +42,12 @@ const services = [
 
 export const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="services" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Section Heading */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-            Our <span className="text-red-500">Services</span>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-dark-gray mb-4 tracking-tight">
+            Our <span className="text-red">Services</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Smart, scalable, and customized AI-powered solutions to transform your business.
@@ -59,14 +59,14 @@ export const ServicesSection = () => {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 border border-gray-100 rounded-2xl bg-white p-6 text-center"
+              className="group backdrop-blur-md bg-white/90 hover:bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 text-center animate-fade-up"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <CardHeader className="flex flex-col items-center mb-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-navy flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transform transition-transform duration-300">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-navy to-red flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl font-semibold text-gray-900 group-hover:text-navy transition-colors duration-300">
+                <CardTitle className="text-xl font-semibold text-dark-gray group-hover:text-navy transition-colors duration-300">
                   {service.title}
                 </CardTitle>
               </CardHeader>
@@ -83,7 +83,7 @@ export const ServicesSection = () => {
         <div className="text-center mt-16">
           <a
             href="/services"
-            className="inline-block px-8 py-3 bg-red-500 text-white text-lg font-semibold rounded-full shadow-md hover:bg-navy hover:shadow-lg transition-all duration-300"
+            className="inline-block px-8 py-3 bg-navy text-white text-lg font-semibold rounded-full shadow-md hover:bg-red hover:shadow-lg transition-all duration-300"
           >
             View All Services →
           </a>
