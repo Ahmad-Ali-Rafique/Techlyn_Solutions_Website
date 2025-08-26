@@ -1,85 +1,96 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, Cog, MessageSquare, Mail, Phone, Zap } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { Bot, Cog, MessageSquare, Mail, Phone, Zap } from "lucide-react";
 
 const services = [
   {
     icon: Bot,
-    title: 'AI Agents & Custom Solutions',
-    description: 'Build intelligent, autonomous AI agents tailored to solve complex business challenges and boost efficiency.',
+    title: "Agentic AI Tools & Custom Agents",
+    description:
+      "Intelligent agents that work autonomously to solve complex business problems and automate decision-making processes.",
   },
   {
     icon: Cog,
-    title: 'Business Process Automation',
-    description: 'Automate repetitive tasks and workflows, reducing costs while improving operational accuracy and speed.',
+    title: "Business Process Automation",
+    description:
+      "Streamline your operations with smart automation solutions that reduce manual work and increase efficiency.",
   },
   {
     icon: MessageSquare,
-    title: 'Conversational AI & Chatbots',
-    description: 'Deliver 24/7 customer support with natural, human-like AI interactions that improve satisfaction and retention.',
+    title: "AI Chatbots & Virtual Assistants",
+    description:
+      "Deploy conversational AI that provides 24/7 customer support and handles complex inquiries naturally.",
   },
   {
     icon: Mail,
-    title: 'Email & WhatsApp Automation',
-    description: 'Streamline communication and lead nurturing with smart automated messaging systems that convert.',
+    title: "Email & WhatsApp Automations",
+    description:
+      "Automate your communication workflows with intelligent email and messaging systems that engage customers.",
   },
   {
     icon: Phone,
-    title: 'Voice AI for Sales & Support',
-    description: 'Engage clients with lifelike voice AI that handles calls, appointments, and support effortlessly.',
+    title: "Voice AI for Sales & Scheduling",
+    description:
+      "Human-like voice agents that handle sales calls, appointment scheduling, and customer interactions.",
   },
   {
     icon: Zap,
-    title: 'Custom AI Development',
-    description: 'Get AI-powered solutions designed exclusively for your business goals and growth strategy.',
+    title: "Custom AI Solutions",
+    description:
+      "Tailored artificial intelligence solutions designed specifically for your unique business requirements.",
   },
 ];
 
 export const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section id="services" className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100">
       <div className="container mx-auto px-6">
-        {/* Section Header */}
+        {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-dark-gray mb-4">
-            Transform Your Business with <span className="text-red">AI Services</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+            Our <span className="text-red-500">Services</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Future-ready solutions that automate, scale, and optimize your operations for maximum growth.
+            Smart, scalable, and customized AI-powered solutions to transform your business.
           </p>
         </div>
 
         {/* Services Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
-            <Card
+            <motion.div
               key={service.title}
-              className="group backdrop-blur-sm bg-white/95 hover:bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6 text-center animate-fade-up"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.15, duration: 0.6 }}
             >
-              <CardHeader className="flex flex-col items-center mb-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-navy to-red flex items-center justify-center mb-4 shadow-md transform group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-8 h-8 text-white" />
+              <Card className="relative bg-white/80 backdrop-blur-lg border border-gray-200 rounded-3xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 group">
+                {/* Icon */}
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-red-500 to-navy flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-10 h-10 text-white" />
                 </div>
-                <CardTitle className="text-xl font-semibold text-dark-gray group-hover:text-navy transition-colors duration-300">
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-gray-900 text-center mb-4 group-hover:text-navy transition-colors duration-300">
                   {service.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 text-base leading-relaxed">
+                </h3>
+                {/* Description */}
+                <p className="text-gray-600 text-sm text-center leading-relaxed">
                   {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+                </p>
+                {/* Accent Border on Hover */}
+                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-red-500 transition-all duration-300 pointer-events-none"></div>
+              </Card>
+            </motion.div>
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA Button */}
         <div className="text-center mt-16">
           <a
             href="/services"
-            className="inline-block px-8 py-4 bg-navy text-white text-lg font-semibold rounded-full shadow-md hover:bg-red hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+            className="inline-block px-8 py-3 border-2 border-red-500 text-red-500 text-lg font-semibold rounded-full hover:bg-red-500 hover:text-white transition-all duration-300"
           >
-            Explore All Services →
+            View All Services →
           </a>
         </div>
       </div>
