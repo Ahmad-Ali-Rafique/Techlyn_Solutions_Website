@@ -1,83 +1,99 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, Cog, MessageSquare, Mail, Phone, Zap, Globe, BarChart, Shield, CheckCircle, Rocket, Wrench, Monitor } from 'lucide-react';
+import {
+  Bot,
+  Cog,
+  MessageSquare,
+  Mail,
+  Phone,
+  Zap,
+  Globe,
+  BarChart,
+  Shield,
+  CheckCircle,
+  Layers,
+  Rocket,
+} from 'lucide-react';
 
 const services = [
   {
     icon: Bot,
     title: 'Agentic AI Tools & Custom Agents',
-    description: 'Intelligent agents that autonomously solve complex problems and streamline operations.',
-    points: ['Autonomous AI workflows', 'Customizable solutions', 'Seamless system integration'],
+    description: 'Intelligent agents that work autonomously to solve business problems.',
+    points: [
+      'Automates decision-making',
+      'Works independently on tasks',
+      'Improves operational efficiency',
+    ],
   },
   {
     icon: Cog,
     title: 'Business Process Automation',
-    description: 'Streamline your business with intelligent automation solutions for better efficiency.',
-    points: ['Workflow optimization', 'Time-saving automations', 'Cost reduction strategies'],
+    description: 'Streamline operations and reduce manual work using smart automation.',
+    points: [
+      'Automates repetitive tasks',
+      'Improves team productivity',
+      'Minimizes errors & costs',
+    ],
   },
   {
     icon: MessageSquare,
     title: 'AI Chatbots & Virtual Assistants',
-    description: 'Deliver 24/7 support with smart, human-like conversational agents.',
-    points: ['Natural language understanding', 'Multi-platform integration', 'Customer self-service'],
+    description: 'Conversational AI to engage and support your customers 24/7.',
+    points: ['Natural human-like responses', 'Handles multiple queries', 'Boosts satisfaction'],
   },
   {
     icon: Mail,
     title: 'Email & WhatsApp Automations',
-    description: 'Engage customers through automated communication flows that convert.',
-    points: ['Personalized messaging', 'Lead nurturing sequences', 'Response automation'],
+    description: 'Automate customer communication and campaigns efficiently.',
+    points: ['Custom workflows', 'Drip campaigns', 'Instant notifications'],
   },
   {
     icon: Phone,
     title: 'Voice AI for Sales & Scheduling',
-    description: 'Human-like voice agents to manage calls, bookings, and client support.',
-    points: ['Speech-to-text accuracy', 'Sales call handling', 'Appointment management'],
+    description: 'Voice agents for calls, scheduling, and lead follow-ups.',
+    points: ['Human-like voice', '24/7 availability', 'Optimized sales process'],
   },
   {
     icon: Zap,
     title: 'Custom AI Solutions',
-    description: 'AI solutions designed specifically for your unique business challenges.',
-    points: ['Tailored to industry needs', 'High scalability', 'Future-ready architecture'],
+    description: 'Tailor-made AI models designed for your unique business needs.',
+    points: ['Fully customized models', 'Secure integration', 'Scalable solutions'],
   },
   {
     icon: Globe,
     title: 'Web & App AI Integration',
-    description: 'Upgrade your platforms with AI-powered features for enhanced engagement.',
-    points: ['Cross-platform integration', 'Performance optimization', 'User experience boost'],
+    description: 'Embed AI features into your websites and mobile apps.',
+    points: ['Seamless integration', 'Cross-platform support', 'Faster deployment'],
   },
   {
     icon: BarChart,
     title: 'Predictive Analytics & Insights',
-    description: 'Turn your data into actionable insights with predictive models.',
-    points: ['Trend forecasting', 'Customer behavior analysis', 'Real-time reporting'],
+    description: 'Transform data into actionable insights for better decisions.',
+    points: ['Data-driven strategies', 'Predictive modeling', 'Real-time reporting'],
   },
   {
     icon: Shield,
     title: 'AI Security & Compliance',
-    description: 'Keep your AI systems secure and compliant with global standards.',
-    points: ['Data encryption', 'GDPR compliance', 'Risk management'],
+    description: 'Keep your AI solutions secure and compliant with regulations.',
+    points: ['Advanced encryption', 'GDPR compliance', 'Continuous monitoring'],
   },
 ];
 
 const steps = [
   {
-    icon: Wrench,
-    title: 'Step 1: Plan Your Integration',
-    description: 'Define your goals, select processes for AI integration, and map your workflow.',
-  },
-  {
-    icon: Monitor,
-    title: 'Step 2: AI Model Setup',
-    description: 'Customize and deploy the AI models tailored for your business requirements.',
+    icon: Layers,
+    title: 'Plan Your Integration',
+    description: 'Understand your business needs and identify areas for AI deployment.',
   },
   {
     icon: CheckCircle,
-    title: 'Step 3: Testing & Optimization',
-    description: 'Run detailed tests, refine workflows, and ensure the system meets performance targets.',
+    title: 'AI Model Setup',
+    description: 'Configure and train the AI model for optimal performance.',
   },
   {
     icon: Rocket,
-    title: 'Step 4: Launch & Scale',
-    description: 'Deploy the AI solution, monitor results, and scale across departments.',
+    title: 'Testing & Deployment',
+    description: 'Run tests, optimize performance, and deploy into production seamlessly.',
   },
 ];
 
@@ -85,7 +101,6 @@ export const ServicesSection = () => {
   return (
     <section id="services" className="py-24 bg-gradient-to-b from-white via-gray-50 to-gray-100">
       <div className="container mx-auto px-6">
-        
         {/* Section Heading */}
         <div className="text-center mb-16">
           <span className="uppercase text-sm font-semibold text-red-500 tracking-wide">
@@ -106,23 +121,25 @@ export const ServicesSection = () => {
             <Card
               key={service.title}
               className="group hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 border border-gray-200 rounded-2xl bg-white p-8"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardHeader className="flex flex-col items-center mb-4 text-center">
+              <CardHeader className="flex flex-col items-center mb-4">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-indigo-500 flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transform transition-transform duration-300">
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors duration-300">
+                <CardTitle className="text-xl font-semibold text-gray-900 text-center group-hover:text-indigo-600 transition-colors duration-300">
                   {service.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 text-sm leading-relaxed mb-3">
+              <CardContent className="text-center">
+                <CardDescription className="text-gray-600 text-sm leading-relaxed mb-4">
                   {service.description}
                 </CardDescription>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  {service.points.map((point, i) => (
-                    <li key={i} className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-red-500 mr-2" /> {point}
+                <ul className="text-left space-y-2">
+                  {service.points.map((point, idx) => (
+                    <li key={idx} className="flex items-center text-gray-700 text-sm">
+                      <CheckCircle className="w-4 h-4 text-red-500 mr-2" />
+                      {point}
                     </li>
                   ))}
                 </ul>
@@ -141,24 +158,21 @@ export const ServicesSection = () => {
           </a>
         </div>
 
-        {/* Deployment Steps */}
+        {/* Deployment Steps Section */}
         <div className="mt-24">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-2">How We Work</h3>
-            <p className="text-gray-600 text-lg">
-              Simple, structured, and result-oriented AI integration process.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, idx) => (
+          <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            How We Deliver <span className="text-red-500">Excellence</span>
+          </h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {steps.map((step, index) => (
               <div
-                key={idx}
-                className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center"
+                key={index}
+                className="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition-all"
               >
-                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-indigo-500 to-red-500 flex items-center justify-center">
-                  <step.icon className="w-7 h-7 text-white" />
+                <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-indigo-500 text-white">
+                  <step.icon className="w-6 h-6" />
                 </div>
-                <h4 className="text-lg font-semibold text-gray-800 mb-2">{step.title}</h4>
+                <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
                 <p className="text-gray-600 text-sm">{step.description}</p>
               </div>
             ))}
