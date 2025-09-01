@@ -267,14 +267,14 @@ export const ContactSection = () => {
       <div>
         <span className="block text-blue-200 text-sm">Talha Shabbir</span>
         <a 
-          href="tel:+92 323 0099421" 
+          href="tel:+92 309 6873220" 
           className="text-blue-100 hover:text-white transition-colors duration-300 text-lg"
         >
-          +92 323 0099421
+          +92 309 6873220
         </a>
       </div>
       <a
-        href="https://wa.me/923230099421" 
+        href="https://wa.me/923096873220" 
         target="_blank"
         rel="noopener noreferrer"
         className="ml-3 p-2 rounded-lg bg-green-600 hover:bg-green-700 transition-colors duration-300"
