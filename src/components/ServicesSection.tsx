@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Bot, Cog, MessageSquare, Mail, Phone, Zap, Globe, BarChart, Shield, CheckCircle, Rocket, Wrench, Monitor } from 'lucide-react';
 
 const services = [
@@ -133,12 +134,13 @@ export const ServicesSection = () => {
 
         {/* CTA Button */}
         <div className="text-center mt-16">
-          <a
-            href="/services"
-            className="inline-block px-10 py-4 bg-gradient-to-r from-red-500 to-indigo-600 text-white text-lg font-semibold rounded-full shadow-md hover:opacity-90 transition-all duration-300"
+          <Button 
+            size="lg"
+            onClick={() => window.location.href = '/services'}
+            className="bg-gradient-to-r from-secondary to-primary text-white hover:opacity-90 transition-all duration-300 px-10 py-6 text-lg font-semibold"
           >
             Explore All Services →
-          </a>
+          </Button>
         </div>
 
         {/* Deployment Steps */}

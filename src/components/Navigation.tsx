@@ -1,11 +1,34 @@
 
 import { Button } from '@/components/ui/button';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const Navigation = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
+
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (isHomePage) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/', { replace: true });
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+
+  const handleServicesClick = () => {
+    if (isHomePage) {
+      navigate('/services');
+    } else {
+      navigate('/services');
     }
   };
 
@@ -38,7 +61,7 @@ export const Navigation = () => {
               About
             </button>
             <button
-              onClick={() => scrollToSection('services')}
+              onClick={handleServicesClick}
               className="text-white hover:text-red transition-colors duration-300 font-medium"
             >
               Services
