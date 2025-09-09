@@ -84,18 +84,18 @@ const steps = [
 
 export const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-white via-gray-50 to-gray-100">
+    <section id="services" className="py-24 bg-gradient-to-b from-background via-muted/30 to-muted/50">
       <div className="container mx-auto px-6">
         
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <span className="uppercase text-sm font-semibold text-red-500 tracking-wide">
+          <span className="uppercase text-sm font-semibold text-secondary tracking-wide">
             Our Services
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2">
-            Transform Your Business with <span className="text-red-500">AI</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary mt-2">
+            Transform Your Business with <span className="text-secondary">AI</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
             Explore our comprehensive suite of AI-driven solutions designed to optimize workflows,
             improve customer experiences, and boost your growth.
           </p>
@@ -106,24 +106,24 @@ export const ServicesSection = () => {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 border border-gray-200 rounded-2xl bg-white p-8"
+              className="group hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 border border-border rounded-2xl bg-card p-8"
             >
               <CardHeader className="flex flex-col items-center mb-4 text-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-indigo-500 flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transform transition-transform duration-300">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transform transition-transform duration-300">
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors duration-300">
+                <CardTitle className="text-xl font-semibold text-primary group-hover:text-secondary transition-colors duration-300">
                   {service.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600 text-sm leading-relaxed mb-3">
+                <CardDescription className="text-muted-foreground text-sm leading-relaxed mb-3">
                   {service.description}
                 </CardDescription>
-                <ul className="text-sm text-gray-700 space-y-1">
+                <ul className="text-sm text-muted-foreground space-y-1">
                   {service.points.map((point, i) => (
                     <li key={i} className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-red-500 mr-2" /> {point}
+                      <CheckCircle className="w-4 h-4 text-secondary mr-2" /> {point}
                     </li>
                   ))}
                 </ul>
@@ -146,8 +146,8 @@ export const ServicesSection = () => {
         {/* Deployment Steps */}
         <div className="mt-24">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-2">How We Work</h3>
-            <p className="text-gray-600 text-lg">
+            <h3 className="text-3xl font-bold text-primary mb-2">How We Work</h3>
+            <p className="text-muted-foreground text-lg">
               Simple, structured, and result-oriented AI integration process.
             </p>
           </div>
@@ -155,13 +155,13 @@ export const ServicesSection = () => {
             {steps.map((step, idx) => (
               <div
                 key={idx}
-                className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center"
+                className="p-6 bg-card rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center"
               >
-                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-indigo-500 to-red-500 flex items-center justify-center">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                   <step.icon className="w-7 h-7 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-gray-800 mb-2">{step.title}</h4>
-                <p className="text-gray-600 text-sm">{step.description}</p>
+                <h4 className="text-lg font-semibold text-primary mb-2">{step.title}</h4>
+                <p className="text-muted-foreground text-sm">{step.description}</p>
               </div>
             ))}
           </div>

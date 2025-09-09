@@ -22,7 +22,7 @@ export const HeroSection = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
               with <span className="text-red">Intelligent Automation</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto mt-8">
+            <p className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-4xl mx-auto mt-8">
               From AI Agents to Smart Systems — we design, build, and deploy automation that works.
             </p>
           </div>
@@ -31,15 +31,15 @@ export const HeroSection = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">13+</div>
-              <div className="text-blue-100 text-lg font-medium">AI Projects</div>
+              <div className="text-white/70 text-lg font-medium">AI Projects</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">10K+</div>
-              <div className="text-blue-100 text-lg font-medium">Users Impacted</div>
+              <div className="text-white/70 text-lg font-medium">Users Impacted</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">Global</div>
-              <div className="text-blue-100 text-lg font-medium">Clientele</div>
+              <div className="text-white/70 text-lg font-medium">Clientele</div>
             </div>
           </div>
 
@@ -47,7 +47,7 @@ export const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
               size="lg" 
-              className="bg-white hover:bg-gray-100 text-navy px-8 py-4 text-lg font-semibold transition-all duration-300 hover:shadow-lg rounded-full"
+              className="bg-white hover:bg-white/90 text-navy px-8 py-4 text-lg font-semibold transition-all duration-300 hover:shadow-lg rounded-full"
               onClick={() => scrollToSection('portfolio')}
             >
               👁 Explore Portfolio →
@@ -90,7 +90,7 @@ export const HeroSection = () => {
                 allowFullScreen
               />
             </div>
-            <p className="text-blue-100 mt-4 text-center">
+            <p className="text-white/70 mt-4 text-center">
               Discover how we're revolutionizing business automation with AI
             </p>
           </div>
