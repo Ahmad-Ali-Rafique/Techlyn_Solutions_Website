@@ -29,8 +29,8 @@ const ChatBot = () => {
           webhookUrl: "https://ssadasd.app.n8n.cloud/webhook/0c5ff7c7-2c16-44e0-ab16-cba74437244d/chat",
           target: "#n8n-chat",
           defaultLanguage: "en",
-          title: "Techlyn Chat Assistant 🤖",
-          subtitle: "Ask us anything about our services!",
+          title: "Techlyn AI Assistant",
+          subtitle: "How can we help with your AI automation needs?",
           theme: "light",
         });
       }

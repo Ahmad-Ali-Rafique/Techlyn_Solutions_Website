@@ -1,0 +1,115 @@
+/* Techlyn Chatbot Custom Styles */
+
+/* Chat trigger button styling */
+.n8n-chat .n8n-chat-trigger {
+  background: linear-gradient(135deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%) !important;
+  border: none !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+}
+
+.n8n-chat .n8n-chat-trigger:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Chat window styling */
+.n8n-chat .n8n-chat-window {
+  border-radius: 16px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid hsl(220, 13%, 91%) !important;
+  max-width: 380px !important;
+  max-height: 500px !important;
+}
+
+/* Chat header styling */
+.n8n-chat .n8n-chat-header {
+  background: linear-gradient(135deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%) !important;
+  color: white !important;
+  border-radius: 16px 16px 0 0 !important;
+  padding: 20px !important;
+}
+
+.n8n-chat .n8n-chat-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  color: white !important;
+}
+
+.n8n-chat .n8n-chat-subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin-top: 4px !important;
+}
+
+/* Chat messages styling */
+.n8n-chat .n8n-chat-messages {
+  background: white !important;
+  padding: 16px !important;
+}
+
+.n8n-chat .n8n-chat-message.user {
+  background: hsl(220, 100%, 20%) !important;
+  color: white !important;
+  border-radius: 18px 18px 4px 18px !important;
+}
+
+.n8n-chat .n8n-chat-message.bot {
+  background: hsl(220, 13%, 95%) !important;
+  color: hsl(220, 100%, 20%) !important;
+  border-radius: 18px 18px 18px 4px !important;
+}
+
+/* Input styling */
+.n8n-chat .n8n-chat-input {
+  border: 1px solid hsl(220, 13%, 91%) !important;
+  border-radius: 24px !important;
+  padding: 12px 16px !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.n8n-chat .n8n-chat-input:focus {
+  border-color: hsl(220, 100%, 20%) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Send button styling */
+.n8n-chat .n8n-chat-send {
+  background: hsl(220, 100%, 20%) !important;
+  border-radius: 50% !important;
+  border: none !important;
+  width: 36px !important;
+  height: 36px !important;
+}
+
+.n8n-chat .n8n-chat-send:hover {
+  background: hsl(0, 84%, 50%) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Positioning */
+.n8n-chat {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 1000 !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .n8n-chat {
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+  
+  .n8n-chat .n8n-chat-window {
+    max-width: calc(100vw - 32px) !important;
+    max-height: calc(100vh - 120px) !important;
+  }
+}
