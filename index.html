@@ -20,11 +20,27 @@
     <link rel="icon" href="/lovable-uploads/e2606a37-61bc-453e-8b84-4321062e427f.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     <link href="/chatbot-overrides.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/index.umd.js" async></script>
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- N8N Chatbot Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/index.umd.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        if (window.n8nChat) {
+          n8nChat.createChat({
+            webhookUrl: "https://ssadasd.app.n8n.cloud/webhook/0c5ff7c7-2c16-44e0-ab16-cba74437244d/chat",
+            target: "#n8n-chat",
+            defaultLanguage: "en",
+            title: "Techlyn AI Assistant",
+            subtitle: "How can we help with your AI automation needs?",
+            theme: "light"
+          });
+        }
+      });
+    </script>
   </body>
 </html>
