@@ -26,21 +26,13 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- N8N Chatbot Integration -->
-    <script src="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/index.umd.js"></script>
-    <script>
-      window.addEventListener('load', function() {
-        if (window.n8nChat) {
-          n8nChat.createChat({
-            webhookUrl: "https://ssadasd.app.n8n.cloud/webhook/0c5ff7c7-2c16-44e0-ab16-cba74437244d/chat",
-            target: "#n8n-chat",
-            defaultLanguage: "en",
-            title: "Techlyn AI Assistant",
-            subtitle: "How can we help with your AI automation needs?",
-            theme: "light"
-          });
-        }
-      });
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://zaheenmujtab.app.n8n.cloud/webhook/3d4612c0-24b7-4075-b721-00cec0c3def7/chat'
+	});
+</script>
   </body>
 </html>
