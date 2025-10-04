@@ -31,7 +31,19 @@
 	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
 	createChat({
-		webhookUrl: 'https://zaheenmujtab.app.n8n.cloud/webhook/3d4612c0-24b7-4075-b721-00cec0c3def7/chat'
+		webhookUrl: 'https://zaheenmujtab.app.n8n.cloud/webhook/3d4612c0-24b7-4075-b721-00cec0c3def7/chat',
+		initialMessages: [
+			'Hello! 👋 I\'m Techlyn, your AI automation assistant. How can I help transform your business today?'
+		],
+		i18n: {
+			en: {
+				title: 'Techlyn',
+				subtitle: 'AI Automation Assistant',
+				footer: '',
+				getStarted: 'Start Conversation',
+				inputPlaceholder: 'Ask me anything...',
+			}
+		}
 	});
 </script>
   </body>
