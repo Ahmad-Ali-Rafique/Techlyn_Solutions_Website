@@ -1,38 +1,120 @@
-/* Techlyn Chatbot - Premium Professional Styling */
+/* Techlyn Chatbot - Ultra Premium Animated Design */
 
-/* Chat trigger button - Premium floating effect */
+/* Animated chat trigger button - Pulse + Glow + Gradient Rotation */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.4),
+                0 0 40px rgba(220, 38, 38, 0.2),
+                0 10px 30px -5px rgba(220, 38, 38, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.6),
+                0 0 60px rgba(220, 38, 38, 0.3),
+                0 15px 40px -5px rgba(220, 38, 38, 0.5);
+  }
+}
+
+@keyframes gradient-rotate {
+  0% { 
+    background: linear-gradient(135deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%);
+  }
+  25% { 
+    background: linear-gradient(225deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%);
+  }
+  50% { 
+    background: linear-gradient(315deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%);
+  }
+  75% { 
+    background: linear-gradient(45deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%);
+  }
+  100% { 
+    background: linear-gradient(135deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%);
+  }
+}
+
+@keyframes float-bounce {
+  0%, 100% { 
+    transform: translateY(0px) scale(1);
+  }
+  50% { 
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4),
+                0 0 0 0 rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(220, 38, 38, 0),
+                0 0 0 0 rgba(220, 38, 38, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(220, 38, 38, 0),
+                0 0 0 30px rgba(220, 38, 38, 0);
+  }
+}
+
 .n8n-chat .n8n-chat-trigger {
   background: linear-gradient(135deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%) !important;
   border: none !important;
-  box-shadow: 0 10px 30px -5px rgba(220, 38, 38, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  width: 64px !important;
-  height: 64px !important;
+  width: 68px !important;
+  height: 68px !important;
   border-radius: 50% !important;
   position: relative !important;
+  cursor: pointer !important;
+  animation: pulse-glow 3s ease-in-out infinite, 
+             float-bounce 3s ease-in-out infinite,
+             gradient-rotate 8s linear infinite !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: visible !important;
 }
 
+/* Animated ring around button */
+.n8n-chat .n8n-chat-trigger::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, hsl(220, 100%, 20%), hsl(0, 84%, 50%)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  z-index: -1;
+}
+
+/* Inner glow effect */
 .n8n-chat .n8n-chat-trigger::after {
   content: '';
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(135deg, hsl(220, 100%, 25%), hsl(0, 84%, 55%));
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 85%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
   border-radius: 50%;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  opacity: 0.6;
+  animation: pulse-glow 2s ease-in-out infinite alternate;
 }
 
 .n8n-chat .n8n-chat-trigger:hover {
-  transform: scale(1.1) translateY(-2px);
-  box-shadow: 0 20px 50px -10px rgba(220, 38, 38, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2) !important;
+  transform: scale(1.15) translateY(-4px) !important;
+  animation: pulse-glow 1.5s ease-in-out infinite, 
+             gradient-rotate 4s linear infinite !important;
 }
 
-.n8n-chat .n8n-chat-trigger:hover::after {
-  opacity: 1;
+/* Bot icon inside button - make it pop */
+.n8n-chat .n8n-chat-trigger svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  animation: float-bounce 2s ease-in-out infinite;
 }
 
 /* Chat window - Modern glassmorphic design */

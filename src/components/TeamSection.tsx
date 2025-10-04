@@ -27,13 +27,19 @@ const teamMembers = [
 
 export const TeamSection = () => {
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 bg-white relative overflow-hidden">
+      {/* Subtle animated background */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute top-10 right-10 w-64 h-64 bg-red/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-navy/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-dark-gray mb-6">
-            3 Brains Behind the <span className="text-red">Magic</span>
+            3 Brains Behind the <span className="text-red animate-shimmer bg-gradient-to-r from-red via-rose-500 to-red bg-[length:200%_auto] bg-clip-text text-transparent">Magic</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             We don't just follow the future — we build it.
           </p>
         </div>
@@ -42,18 +48,18 @@ export const TeamSection = () => {
           {teamMembers.map((member, index) => (
             <div 
               key={member.name}
-              className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 animate-scale-in"
+              className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-gray-100 animate-bounce-in cursor-pointer"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Professional Photo */}
               <div className="flex justify-center mb-6">
-                <Avatar className="w-32 h-32 group-hover:scale-105 transition-transform duration-300">
+                <Avatar className="w-32 h-32 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 ring-4 ring-transparent group-hover:ring-red/30">
                   <AvatarImage 
                     src={member.image} 
                     alt={member.name}
                     className="object-cover"
                   />
-                  <AvatarFallback className="w-32 h-32 bg-navy text-white text-3xl font-bold group-hover:bg-red transition-colors duration-300">
+                  <AvatarFallback className="w-32 h-32 bg-navy text-white text-3xl font-bold group-hover:bg-red transition-all duration-500">
                     {member.avatar}
                   </AvatarFallback>
                 </Avatar>

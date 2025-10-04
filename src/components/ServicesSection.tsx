@@ -88,14 +88,14 @@ export const ServicesSection = () => {
       <div className="container mx-auto px-6">
         
         {/* Section Heading */}
-        <div className="text-center mb-16">
-          <span className="uppercase text-sm font-semibold text-secondary tracking-wide">
+        <div className="text-center mb-16 animate-fade-in-down">
+          <span className="uppercase text-sm font-semibold text-secondary tracking-wide animate-fade-in-up">
             Our Services
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-primary mt-2">
-            Transform Your Business with <span className="text-secondary">AI</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary mt-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            Transform Your Business with <span className="text-secondary animate-shimmer bg-gradient-to-r from-secondary via-red to-secondary bg-[length:200%_auto] bg-clip-text text-transparent">AI</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             Explore our comprehensive suite of AI-driven solutions designed to optimize workflows,
             improve customer experiences, and boost your growth.
           </p>
@@ -106,11 +106,12 @@ export const ServicesSection = () => {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 border border-border rounded-2xl bg-card p-8"
+              className="group hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-500 border border-border rounded-2xl bg-card p-8 animate-scale-in cursor-pointer"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="flex flex-col items-center mb-4 text-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transform transition-transform duration-300">
-                  <service.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center mb-4 shadow-md group-hover:scale-125 group-hover:rotate-12 transform transition-all duration-500 group-hover:shadow-red/50">
+                  <service.icon className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-primary group-hover:text-secondary transition-colors duration-300">
                   {service.title}
