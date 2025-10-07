@@ -1,34 +1,34 @@
-/* Techlyn Chatbot - Ultra Premium Animated Design */
+/* Techlyn Chatbot - Modern Professional Design */
 
 /* Animated chat trigger button - Pulse + Glow + Gradient Rotation */
 @keyframes pulse-glow {
   0%, 100% { 
-    box-shadow: 0 0 20px rgba(220, 38, 38, 0.4),
-                0 0 40px rgba(220, 38, 38, 0.2),
-                0 10px 30px -5px rgba(220, 38, 38, 0.3);
+    box-shadow: 0 0 20px rgba(230, 0, 0, 0.4),
+                0 0 40px rgba(230, 0, 0, 0.2),
+                0 10px 30px -5px rgba(230, 0, 0, 0.3);
   }
   50% { 
-    box-shadow: 0 0 30px rgba(220, 38, 38, 0.6),
-                0 0 60px rgba(220, 38, 38, 0.3),
-                0 15px 40px -5px rgba(220, 38, 38, 0.5);
+    box-shadow: 0 0 30px rgba(230, 0, 0, 0.6),
+                0 0 60px rgba(230, 0, 0, 0.3),
+                0 15px 40px -5px rgba(230, 0, 0, 0.5);
   }
 }
 
 @keyframes gradient-rotate {
   0% { 
-    background: linear-gradient(135deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%);
+    background: linear-gradient(135deg, #0b3c74 0%, #e60000 100%);
   }
   25% { 
-    background: linear-gradient(225deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%);
+    background: linear-gradient(225deg, #0b3c74 0%, #e60000 100%);
   }
   50% { 
-    background: linear-gradient(315deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%);
+    background: linear-gradient(315deg, #0b3c74 0%, #e60000 100%);
   }
   75% { 
-    background: linear-gradient(45deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%);
+    background: linear-gradient(45deg, #0b3c74 0%, #e60000 100%);
   }
   100% { 
-    background: linear-gradient(135deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%);
+    background: linear-gradient(135deg, #0b3c74 0%, #e60000 100%);
   }
 }
 
@@ -43,21 +43,41 @@
 
 @keyframes ripple {
   0% {
-    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4),
-                0 0 0 0 rgba(220, 38, 38, 0.4);
+    box-shadow: 0 0 0 0 rgba(230, 0, 0, 0.4),
+                0 0 0 0 rgba(230, 0, 0, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 15px rgba(220, 38, 38, 0),
-                0 0 0 0 rgba(220, 38, 38, 0.4);
+    box-shadow: 0 0 0 15px rgba(230, 0, 0, 0),
+                0 0 0 0 rgba(230, 0, 0, 0.4);
   }
   100% {
-    box-shadow: 0 0 0 15px rgba(220, 38, 38, 0),
-                0 0 0 30px rgba(220, 38, 38, 0);
+    box-shadow: 0 0 0 15px rgba(230, 0, 0, 0),
+                0 0 0 30px rgba(230, 0, 0, 0);
   }
 }
 
+@keyframes typing-dots {
+  0%, 60%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+}
+
 .n8n-chat .n8n-chat-trigger {
-  background: linear-gradient(135deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%) !important;
+  background: linear-gradient(135deg, #0b3c74 0%, #e60000 100%) !important;
   border: none !important;
   width: 68px !important;
   height: 68px !important;
@@ -71,6 +91,25 @@
   overflow: visible !important;
 }
 
+/* Tooltip on hover */
+.n8n-chat .n8n-chat-trigger:hover::after {
+  content: 'Chat with Techlyn';
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(11, 60, 116, 0.95);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fade-in 0.2s ease-out;
+  z-index: 1000;
+}
+
 /* Animated ring around button */
 .n8n-chat .n8n-chat-trigger::before {
   content: '';
@@ -82,7 +121,7 @@
   height: calc(100% + 8px);
   border-radius: 50%;
   border: 2px solid transparent;
-  background: linear-gradient(45deg, hsl(220, 100%, 20%), hsl(0, 84%, 50%)) border-box;
+  background: linear-gradient(45deg, #0b3c74, #e60000) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -90,23 +129,8 @@
   z-index: -1;
 }
 
-/* Inner glow effect */
-.n8n-chat .n8n-chat-trigger::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 85%;
-  height: 85%;
-  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-  border-radius: 50%;
-  opacity: 0.6;
-  animation: pulse-glow 2s ease-in-out infinite alternate;
-}
-
 .n8n-chat .n8n-chat-trigger:hover {
-  transform: scale(1.15) translateY(-4px) !important;
+  transform: scale(1.1) translateY(-2px) !important;
   animation: pulse-glow 1.5s ease-in-out infinite, 
              gradient-rotate 4s linear infinite !important;
 }
@@ -117,12 +141,12 @@
   animation: float-bounce 2s ease-in-out infinite;
 }
 
-/* Chat window - Modern glassmorphic design */
+/* Chat window - Modern professional design */
 .n8n-chat .n8n-chat-window {
-  border-radius: 20px !important;
+  border-radius: 16px !important;
   box-shadow: 
-    0 30px 90px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+    0 20px 60px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(11, 60, 116, 0.1) inset !important;
   border: none !important;
   backdrop-filter: blur(20px) !important;
   max-width: 420px !important;
@@ -143,18 +167,19 @@
   }
 }
 
-/* Chat header - Premium gradient with subtle animation */
+/* Chat header - Techlyn branded gradient */
 .n8n-chat .n8n-chat-header {
-  background: linear-gradient(135deg, hsl(220, 100%, 20%) 0%, hsl(0, 84%, 50%) 100%) !important;
+  background: linear-gradient(90deg, #0b3c74 0%, #e60000 100%) !important;
   color: white !important;
-  border-radius: 20px 20px 0 0 !important;
-  padding: 24px !important;
+  border-radius: 16px 16px 0 0 !important;
+  padding: 20px !important;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   position: relative;
   z-index: 2;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .n8n-chat .n8n-chat-header::after {
@@ -167,18 +192,21 @@
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
 }
 
-/* Techlyn logo in header - Enhanced with glow */
+/* Techlyn robot avatar in header */
 .n8n-chat .n8n-chat-header::before {
-  content: "";
-  display: inline-block;
-  width: 40px; 
-  height: 40px;
+  content: "🤖";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; 
+  height: 44px;
   margin-right: 4px;
-  background: url('/lovable-uploads/e2606a37-61bc-453e-8b84-4321062e427f.png') no-repeat center/cover;
-  vertical-align: middle;
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 /* Professional typography */
@@ -207,51 +235,112 @@
 }
 
 .n8n-chat .n8n-chat-message {
-  padding: 12px 16px !important;
-  margin: 8px 0 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 14px 18px !important;
+  margin: 10px 0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 15px !important;
-  line-height: 1.5 !important;
+  line-height: 1.6 !important;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .n8n-chat .n8n-chat-message:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   transform: translateY(-1px);
 }
 
+/* User message with avatar */
 .n8n-chat .n8n-chat-message.user {
-  background: linear-gradient(135deg, hsl(220, 100%, 20%) 0%, hsl(220, 100%, 25%) 100%) !important;
+  background: linear-gradient(135deg, #0b3c74 0%, #0e4d92 100%) !important;
   color: white !important;
-  border-radius: 20px 20px 4px 20px !important;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+  border-radius: 16px 16px 4px 16px !important;
+  box-shadow: 0 4px 12px rgba(11, 60, 116, 0.3) !important;
+  flex-direction: row-reverse;
 }
 
+.n8n-chat .n8n-chat-message.user::before {
+  content: "👤";
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* Bot message with robot avatar */
 .n8n-chat .n8n-chat-message.bot {
-  background: white !important;
-  color: hsl(220, 100%, 20%) !important;
-  border-radius: 20px 20px 20px 4px !important;
-  border: 1px solid hsl(220, 13%, 91%) !important;
+  background: #f1f5f9 !important;
+  color: #0b3c74 !important;
+  border-radius: 16px 16px 16px 4px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.n8n-chat .n8n-chat-message.bot::before {
+  content: "🤖";
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #0b3c74, #e60000);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* Typing indicator */
+.n8n-chat .n8n-chat-typing {
+  display: flex;
+  gap: 4px;
+  padding: 14px 18px;
+  background: #f1f5f9;
+  border-radius: 16px 16px 16px 4px;
+  width: fit-content;
+  margin: 10px 0;
+}
+
+.n8n-chat .n8n-chat-typing span {
+  width: 8px;
+  height: 8px;
+  background: #0b3c74;
+  border-radius: 50%;
+  animation: typing-dots 1.4s infinite;
+}
+
+.n8n-chat .n8n-chat-typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.n8n-chat .n8n-chat-typing span:nth-child(3) {
+  animation-delay: 0.4s;
 }
 
 /* Input field - Premium interactive design */
 .n8n-chat .n8n-chat-input {
-  border: 2px solid hsl(220, 13%, 91%) !important;
-  border-radius: 28px !important;
+  border: 2px solid #e2e8f0 !important;
+  border-radius: 24px !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   padding: 14px 20px !important;
   font-size: 15px !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: white !important;
+  color: #0b3c74 !important;
 }
 
 .n8n-chat .n8n-chat-input:focus {
-  border-color: hsl(0, 84%, 50%) !important;
+  border-color: #e60000 !important;
   outline: none;
   box-shadow: 
-    0 4px 20px rgba(220, 38, 38, 0.15),
-    0 0 0 4px rgba(220, 38, 38, 0.05) !important;
+    0 4px 20px rgba(230, 0, 0, 0.15),
+    0 0 0 4px rgba(230, 0, 0, 0.05) !important;
   transform: translateY(-1px);
 }
 
@@ -262,7 +351,7 @@
 
 /* Send button enhancement */
 .n8n-chat .n8n-chat-send-button {
-  background: linear-gradient(135deg, hsl(220, 100%, 20%), hsl(0, 84%, 50%)) !important;
+  background: linear-gradient(135deg, #0b3c74, #e60000) !important;
   border: none !important;
   border-radius: 50% !important;
   width: 44px !important;
@@ -271,12 +360,18 @@
   align-items: center !important;
   justify-content: center !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.3) !important;
 }
 
 .n8n-chat .n8n-chat-send-button:hover {
-  transform: scale(1.08) rotate(5deg) !important;
-  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4) !important;
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4) !important;
+}
+
+/* Waving hand animation for greeting */
+.n8n-chat-greeting-wave {
+  display: inline-block;
+  animation: wave 2s ease-in-out 2;
 }
 
 /* Responsive design */
@@ -291,18 +386,41 @@
     width: 56px !important;
     height: 56px !important;
   }
+
+  .n8n-chat .n8n-chat-trigger:hover::after {
+    display: none; /* Hide tooltip on mobile */
+  }
 }
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-  .n8n-chat .n8n-chat-window,
-  .n8n-chat .n8n-chat-messages,
+  .n8n-chat .n8n-chat-window {
+    background: rgba(26, 32, 44, 0.95) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4) !important;
+  }
+  
+  .n8n-chat .n8n-chat-messages {
+    background: linear-gradient(to bottom, #1a202c 0%, #0f1419 100%) !important;
+  }
+  
   .n8n-chat .n8n-chat-message.bot {
-    background: #1a202c !important;
+    background: rgba(30, 41, 59, 0.8) !important;
+    color: #f8fafc !important;
+    border-color: rgba(71, 85, 105, 0.4) !important;
+  }
+  
+  .n8n-chat .n8n-chat-message.user {
+    background: linear-gradient(135deg, #0b3c74, #0e4d92) !important;
     color: #fff !important;
   }
-  .n8n-chat .n8n-chat-message.user {
-    background: #e53e3e !important;
-    color: #fff !important;
+
+  .n8n-chat .n8n-chat-input {
+    background: rgba(30, 41, 59, 0.6) !important;
+    border-color: rgba(71, 85, 105, 0.4) !important;
+    color: white !important;
+  }
+
+  .n8n-chat .n8n-chat-input::placeholder {
+    color: rgba(226, 232, 240, 0.6) !important;
   }
 }
