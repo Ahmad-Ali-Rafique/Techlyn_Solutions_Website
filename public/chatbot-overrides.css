@@ -76,6 +76,35 @@
   60% { transform: rotate(0deg); }
 }
 
+@keyframes slide-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* "Any questions?" prompt text styling */
+.chat-prompt-text {
+  animation: slide-fade-in 1s ease-out 0.5s both;
+  pointer-events: none;
+  user-select: none;
+}
+
+.chat-prompt-text span {
+  background: linear-gradient(135deg, rgba(11, 60, 116, 0.95), rgba(230, 0, 0, 0.95));
+  padding: 10px 18px;
+  border-radius: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 .n8n-chat .n8n-chat-trigger {
   background: linear-gradient(135deg, #0b3c74 0%, #e60000 100%) !important;
   border: none !important;
@@ -89,11 +118,31 @@
              gradient-rotate 8s linear infinite !important;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
   overflow: visible !important;
+  box-shadow: 0 6px 24px rgba(11, 60, 116, 0.4), 0 0 40px rgba(230, 0, 0, 0.3) !important;
+}
+
+/* Hide default SVG icon */
+.n8n-chat .n8n-chat-trigger svg {
+  display: none !important;
+}
+
+/* Techlyn logo (TS) centered in button */
+.n8n-chat .n8n-chat-trigger::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  background: url('/lovable-uploads/e2606a37-61bc-453e-8b84-4321062e427f.png') no-repeat center/contain;
+  filter: brightness(1.2) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  z-index: 2;
 }
 
 /* Tooltip on hover */
-.n8n-chat .n8n-chat-trigger:hover::after {
-  content: 'Chat with Techlyn';
+.n8n-chat .n8n-chat-trigger:hover::before {
+  content: 'Chat with Techlyn 🤖';
   position: absolute;
   right: calc(100% + 12px);
   top: 50%;
@@ -107,38 +156,15 @@
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   animation: fade-in 0.2s ease-out;
-  z-index: 1000;
-}
-
-/* Animated ring around button */
-.n8n-chat .n8n-chat-trigger::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% + 8px);
-  height: calc(100% + 8px);
-  border-radius: 50%;
-  border: 2px solid transparent;
-  background: linear-gradient(45deg, #0b3c74, #e60000) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  animation: ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-  z-index: -1;
+  z-index: 1001;
+  pointer-events: none;
 }
 
 .n8n-chat .n8n-chat-trigger:hover {
-  transform: scale(1.1) translateY(-2px) !important;
+  transform: scale(1.12) translateY(-2px) !important;
   animation: pulse-glow 1.5s ease-in-out infinite, 
              gradient-rotate 4s linear infinite !important;
-}
-
-/* Bot icon inside button - make it pop */
-.n8n-chat .n8n-chat-trigger svg {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-  animation: float-bounce 2s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(11, 60, 116, 0.5), 0 0 50px rgba(230, 0, 0, 0.4) !important;
 }
 
 /* Chat window - Modern professional design */
@@ -387,8 +413,12 @@
     height: 56px !important;
   }
 
-  .n8n-chat .n8n-chat-trigger:hover::after {
+  .n8n-chat .n8n-chat-trigger:hover::before {
     display: none; /* Hide tooltip on mobile */
+  }
+
+  .chat-prompt-text {
+    display: none; /* Hide "Any questions?" on mobile */
   }
 }
 
