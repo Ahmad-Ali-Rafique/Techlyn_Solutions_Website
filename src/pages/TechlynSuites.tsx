@@ -83,46 +83,12 @@ const TechlynSuites = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background ml-64">
       <Navigation />
       
-      <div className="pt-16 flex">
-        {/* Fixed Sidebar */}
-        <aside className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 border-r border-border bg-card/50 backdrop-blur-sm overflow-y-auto">
-          <div className="p-6">
-            <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-[#0b3c74] to-[#e60000] bg-clip-text text-transparent flex items-center gap-2">
-              <Sparkles className="w-6 h-6 text-[#e60000]" />
-              Techlyn Suites
-            </h2>
-            <nav className="space-y-3">
-              {suites.map((suite) => (
-                <button
-                  key={suite.id}
-                  onClick={() => suite.available && setActiveSuite(suite.id)}
-                  disabled={!suite.available}
-                  className={`
-                    w-full text-left px-4 py-3 rounded-lg transition-all duration-300
-                    ${
-                      activeSuite === suite.id
-                        ? 'bg-gradient-to-r from-[#0b3c74] to-[#e60000] text-white shadow-md'
-                        : suite.available
-                        ? 'bg-muted/50 hover:bg-muted text-foreground'
-                        : 'bg-muted/20 text-muted-foreground cursor-not-allowed'
-                    }
-                  `}
-                >
-                  <div className="font-medium text-sm">{suite.name}</div>
-                  {!suite.available && (
-                    <div className="text-xs mt-1 opacity-60">Coming Soon</div>
-                  )}
-                </button>
-              ))}
-            </nav>
-          </div>
-        </aside>
-
+      <div className="pt-16">
         {/* Main Content */}
-        <main className="ml-64 flex-1 px-8 py-12">
+        <main className="px-8 py-12" id="suites-content">
           <div className="max-w-6xl mx-auto">
             {activeSuite === 'ai-communication' && (
               <div className="space-y-16 animate-fade-in">
