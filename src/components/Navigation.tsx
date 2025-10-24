@@ -25,11 +25,11 @@ export const Navigation = () => {
   };
 
   const handleServicesClick = () => {
-    if (isHomePage) {
-      navigate('/services');
-    } else {
-      navigate('/services');
-    }
+    navigate('/services');
+  };
+
+  const handleSuitesClick = () => {
+    navigate('/suites');
   };
 
   return (
@@ -65,6 +65,12 @@ export const Navigation = () => {
               className="text-white hover:text-red transition-colors duration-300 font-medium"
             >
               Services
+            </button>
+            <button
+              onClick={handleSuitesClick}
+              className="text-white hover:text-red transition-colors duration-300 font-medium"
+            >
+              Suites
             </button>
             <button
               onClick={() => scrollToSection('portfolio')}
