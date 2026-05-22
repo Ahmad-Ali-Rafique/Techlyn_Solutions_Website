@@ -10,7 +10,7 @@ import ChatBot from '@/components/ChatBot';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background ml-64">
+    <div className="min-h-screen bg-background md:ml-64">
       <Navigation />
       <HeroSection />
       <TeamSection />
