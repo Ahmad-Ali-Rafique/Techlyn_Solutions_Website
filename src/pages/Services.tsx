@@ -278,7 +278,7 @@ const processSteps = [
 
 const ServicesPage = () => {
   return (
-    <div className="min-h-screen bg-background ml-64">
+    <div className="min-h-screen bg-background md:ml-64">
       <Navigation />
       
       {/* Hero Section */}
